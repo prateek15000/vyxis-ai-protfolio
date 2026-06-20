@@ -15,13 +15,13 @@ const Services = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Work", path: "#Work" },
+    { name: "Work", path: "/Work" },
   ];
   return (
     <>
       <Helmet>
-        <title>Services - Guri Ghumaan</title>
-        <link rel="canonical" href="https://guri-ghumaan.vercel.app/services" />
+        <title>Services - vyxis.ai</title>
+        <link rel="canonical" href="https://vyxis-ai.vercel.app/services" />
       </Helmet>
 
       <Header navLinks={navLinks} isDark={true} />

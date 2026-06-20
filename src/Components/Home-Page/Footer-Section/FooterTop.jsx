@@ -7,7 +7,7 @@ const FooterTop = ({ styles, footBtn }) => {
       className={`${styles.footText} ${styles.flex} ${styles.ac} ${styles.sb}`}
     >
       <p>
-        Let's Work <br /> Together
+        Let's Architect <br /> Your Future
       </p>
 
       <div className={styles.footArrow}>
@@ -33,7 +33,7 @@ const FooterTop = ({ styles, footBtn }) => {
         ref={footBtn}
         className={`${styles.footCta} ${styles.flex} ${styles.ac} ${styles.jc}`}
       >
-        Get In Touch
+        Start the Conversation
       </Link>
     </div>
   );

@@ -11,10 +11,10 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Guri Ghumaan - Frontend Developer</title>
+        <title>Prateek Mittal | Founder of vyxis.ai - AI-Native Software Engineering</title>
         <link
           rel="canonical"
-          href="https://guri-ghumaan.vercel.app/"
+          href="https://vyxis-ai.vercel.app/"
         />
       </Helmet>
       <Header />

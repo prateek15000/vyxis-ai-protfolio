@@ -80,6 +80,12 @@
   left: 70%;
   transition: var(--transition);
 }
+
+.circle:hover {
+  background: var(--bodyBg);
+  color: #ffffff;
+  rotate: 360deg;
+}
 .middleSec {
   padding: 0vw 5vw;
   padding-bottom: 8rem;

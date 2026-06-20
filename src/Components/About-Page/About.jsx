@@ -14,17 +14,17 @@ const About = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Work", path: "#Work" },
+    { name: "Work", path: "/Work" },
     { name: "Services", path: "/services" },
   ];
 
   return (
     <>
       <Helmet>
-        <title>About - Guri Ghumaan</title>
-        <link rel="canonical" href="https://guri-ghumaan.vercel.app/about" />
+        <title>About - Prateek Mittal</title>
+        <link rel="canonical" href="https://vyxis-ai.vercel.app/about" />
       </Helmet>
-      <Header navLinks={navLinks} />
+      <Header navLinks={navLinks} isDark={true} />
       <main>
         <AboutTop blackRef={blackRef} helloRef={helloRef} styles={styles} />
         <AboutMiddle styles={styles} />

@@ -183,6 +183,12 @@ textarea::placeholder {
   height: 164px;
   border-radius: 50%;
   font-size: clamp(16px, 1.2vw, 20px);
+  line-height: 1.2;
+  text-align: center;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: #f2f2f2;
   color: #000000;
   border-radius: 50%;
@@ -192,6 +198,23 @@ textarea::placeholder {
   color: #fff;
   background-color: var(--btnBg);
   transform: rotate(360deg);
+}
+.submitBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+.formStatus {
+  margin-top: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(16px, 1.2vw, 20px);
+  line-height: 1.5;
+  padding-left: 3.5rem;
+}
+.success {
+  color: #14853d;
+}
+.error {
+  color: #b42318;
 }
 .details {
   width: 25%;

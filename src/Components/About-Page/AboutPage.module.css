@@ -24,6 +24,7 @@ html.lenis body {
 .lenis.lenis-stopped {
   overflow: hidden;
 }
+
 :root {
   --btnBg: #455ce9;
   --bodyBg: #1c1d20;
@@ -34,8 +35,19 @@ html.lenis body {
   --transition: 0.3s ease;
 }
 
+.container {
+  width: min(1440px, 95%);
+  margin: auto;
+}
+
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6rem;
 }
 
 .fClmn {
@@ -62,11 +74,7 @@ li {
 span {
   display: inline-block;
 }
-.AboutPage {
-  padding: 30vh 15vw;
-  padding-bottom: 5rem;
-  height: fit-content;
-}
+
 .black {
   background: #000;
   width: 100%;
@@ -77,6 +85,7 @@ span {
   right: 0;
   z-index: 999;
 }
+
 .helloText {
   position: absolute;
   inset: 0;
@@ -88,17 +97,244 @@ span {
   font-family: Montserrat, sans-serif;
 }
 
-.AboutTopSec {
-  height: 100vh;
+.aboutSec {
+  padding: 30vh 12vw;
+  padding-bottom: 11rem;
+  background-color: #fff;
+}
+
+.aboutTop {
   position: relative;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid #cdcccc;
+}
+
+.heading {
+  font-size: 4.5vw;
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--bodyBg);
+}
+
+.circle {
+  border-radius: 50%;
+  width: 164px;
+  height: 164px;
+  padding: 0 22px;
+  text-align: center;
+  line-height: 1.25;
+  font-size: 16px;
+  background: var(--btnBg);
+  color: #ffffff;
+  position: absolute;
+  bottom: -77px;
+  left: 70%;
+  transition: var(--transition);
+}
+
+.circle:hover {
+  background: var(--bodyBg);
+  color: #ffffff;
+  rotate: 360deg;
+}
+
+.middleSec {
+  padding: 0vw 5vw;
+  padding-bottom: 8rem;
   background: #fff;
 }
 
+.aboutMiddle {
+  gap: 3rem;
+}
+
+.midArrow {
+  width: 5%;
+}
+
+.midDesc {
+  width: 25%;
+  margin-right: 3rem;
+  color: var(--bodyBg);
+}
+
+.midDesc p {
+  color: var(--bodyBg);
+}
+
+.midDesc p:nth-child(2) {
+  margin-top: 30px;
+  color: #a9a9a9;
+}
+
+.midImg {
+  width: 75%;
+}
+
+.midImg img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+}
+
+.aboutBottom {
+  background-color: #fff;
+  padding: 0vw 5vw;
+  padding-bottom: 8rem;
+}
+
+.heading2 {
+  font-size: 3.5vw;
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--bodyBg);
+}
+
+.allCards {
+  margin-top: 4rem;
+}
+
+.card {
+  gap: 30px;
+}
+
+.numbering p,
+.title p,
+.description p {
+  color: var(--bodyBg);
+}
+
+.numbering p {
+  color: #8d8d8d;
+  padding: 1.7rem 0;
+  border-bottom: 1px solid #cdcccc;
+}
+
+.title p {
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+
 @media (max-width: 1024px) {
+  .aboutSec {
+    padding: 10vh 5vw;
+    padding-top: 10rem;
+    padding-bottom: 8rem;
+  }
+  .middleSec {
+    padding: 0vw 0vw;
+    padding-bottom: 5rem;
+  }
+  .heading {
+    font-size: 6vw;
+  }
+  .circle {
+    left: 65%;
+  }
+  .aboutMiddle {
+    gap: 2rem;
+  }
+  .midDesc {
+    width: 30%;
+    margin-right: 2rem;
+  }
+  .midImg {
+    width: 70%;
+  }
+  .aboutBottom {
+    padding: 0vh 0vw;
+    padding-bottom: 5rem;
+  }
+  .heading2 {
+    font-size: 4vw;
+  }
+  .allCards {
+    margin-top: 3rem;
+  }
+  .grid {
+    gap: 3rem;
+  }
+  .title p {
+    font-size: 2vw;
+  }
 }
 
 @media (max-width: 768px) {
+  .aboutSec {
+    padding: 10vh 0vw;
+    padding-top: 10rem;
+    padding-bottom: 7rem;
+  }
+  .middleSec {
+    padding: 0vw 0vw;
+    padding-bottom: 5rem;
+    background: #fff;
+  }
+  .circle {
+    width: 143px;
+    height: 143px;
+    left: 60%;
+  }
+  .aboutMiddle {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .midArrow,
+  .midDesc,
+  .midImg {
+    margin: 0;
+    width: 100%;
+  }
+  .midDesc p:nth-child(2) {
+    margin-top: 1.2rem;
+  }
+  .aboutBottom {
+    padding: 0;
+    padding-bottom: 5rem;
+  }
+  .heading2 {
+    font-size: 6vw;
+  }
+  .title p {
+    font-size: 3vw;
+  }
+  .allCards {
+    margin-top: 3rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+  .card {
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+  }
+  .numbering p {
+    color: #8d8d8d;
+    padding: 1rem 0;
+    border-bottom: 1px solid #cdcccc;
+  }
 }
 
 @media (max-width: 480px) {
+  .heading {
+    font-size: 9vw;
+  }
+  .mobileBr {
+    display: none;
+  }
+  .circle {
+    bottom: -70px;
+    left: 55%;
+  }
+  .midImg img {
+    height: 100%;
+  }
+  .heading2 {
+    font-size: 8vw;
+  }
+  .title p {
+    font-size: 5vw;
+  }
 }

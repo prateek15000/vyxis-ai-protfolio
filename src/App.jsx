@@ -8,6 +8,7 @@ import Home from "./Components/Home-Page/Home";
 import About from "./Components/About-Page/About";
 import Contact from "./Components/Contact-Page/Contact";
 import Services from "./Components/Services-Page/Services";
+import Work from "./Components/Work-Page/Work";
 import ScrollToTop from "./Components/ScrollToTop";
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/Work" element={<Work />} />
       </Routes>
     </>
   );

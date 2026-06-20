@@ -1,75 +1,97 @@
-## 🚀 Guri Ghumaan — Frontend Developer
+# Prateek Mittal — vyxis.ai Portfolio
 
-Guri Ghumaan is a modern frontend developer focused on creating **high-converting websites**, premium landing pages, and interactive web experiences that help brands stand out online.
+Personal portfolio website for **Prateek Mittal**, founder of **vyxis.ai**, an AI-native software engineering company building enterprise CRM, Education Tech, Hospitality systems, and AI Agent integrations.
 
-From smooth animations to clean UI design, every section of this portfolio is crafted to showcase modern development, strong visual storytelling, and performance-focused user experiences.
+The site is a single-page React application with multiple routed pages (Home, About, Services, Work, Contact), smooth scrolling, and GSAP-powered animations.
 
-This portfolio reflects a creative approach to frontend development — combining aesthetics, motion, responsiveness, and modern technologies to build websites that not only look premium but also feel engaging and professional.
+## Tech Stack
 
-**Live Website** 🔗 https://guri-ghumaan.vercel.app/
+- **React 19** + **React Router DOM 7** — UI and routing
+- **Vite 7** — build tooling and dev server
+- **GSAP** + **@gsap/react** — animations
+- **Lenis** — smooth scrolling
+- **react-helmet-async** — per-page SEO meta tags
+- **lucide-react** — icons
+- **@emailjs/browser** — contact form delivery
+- **@vercel/analytics** + **@vercel/speed-insights** — analytics
+- Serverless API (`/api/contact.js`) for Telegram-based contact notifications
+- **ESLint** — linting
 
----
+## Getting Started
 
-## ✨ What I Build
+### Prerequisites
 
-- 🚀 Modern Landing Pages  
-- 💎 Premium Portfolio Websites  
-- 🎨 Interactive Frontend Experiences  
-- ⚡ Smooth Animated Websites  
-- 📱 Fully Responsive Designs  
-- 🛍️ Brand & Business Websites  
-- 🎯 Conversion-Focused UI Design  
+- [Node.js](https://nodejs.org/) 18+ and npm
 
----
+### Installation
 
-## 🔥 Why Work With Me?
+```bash
+npm install
+```
 
-- Clean and modern UI/UX approach  
-- Smooth GSAP-powered animations  
-- Responsive design for all devices  
-- Fast-loading and optimized websites  
-- Attention to detail and visual hierarchy  
-- Modern React.js development workflow  
-- Interactive experiences that keep users engaged  
+### Development
 
----
+Start the local dev server (default: http://localhost:5173):
 
-## 🛠️ Tech Stack
+```bash
+npm run dev
+```
 
-- `React.js`
-- `JavaScript`
-- `HTML5`
-- `CSS3`
-- `GSAP`
-- `Lenis`
-- `Git & Github`
-- `Deployment`
+### Build
 
----
+Create a production build in the `dist/` folder:
 
-## ⚡ Features Included In My Projects
+```bash
+npm run build
+```
 
-- Premium modern layouts  
-- Interactive animations and transitions  
-- Smooth scrolling experiences  
-- Optimized performance and SEO  
-- Mobile-first responsive development  
-- Reusable and scalable code structure  
-- Clean and maintainable frontend architecture  
+### Preview
 
----
+Preview the production build locally:
 
-## 📬 Contact Me
+```bash
+npm run preview
+```
 
-If you're looking for a modern website, landing page, or interactive frontend experience, feel free to reach out.
+### Lint
 
-- **GitHub:** https://github.com/guristacks  
-- **LinkedIn:** https://www.linkedin.com/in/guristacks  
-- **Email:** [guristacks@gmail.com](mailto:guristacks@gmail.com)
-- **Instagram:** https://www.instagram.com/guri_ghumxn 
+```bash
+npm run lint
+```
 
----
+## Project Structure
 
-## 🌟 Support
+```
+.
+├── api/                 # Serverless functions (contact form)
+├── public/              # Static assets
+├── src/
+│   ├── Components/
+│   │   ├── Home-Page/    # Hero, Header, Footer, About preview, Videos, Work sections
+│   │   ├── About-Page/
+│   │   ├── Services-Page/
+│   │   ├── Work-Page/
+│   │   └── Contact-Page/
+│   ├── App.jsx          # Routes
+│   ├── main.jsx         # App entry point
+│   └── index.css
+├── index.html
+├── vite.config.js
+├── vercel.json          # Vercel deployment config
+└── package.json
+```
 
-If you like this portfolio, consider giving it a ⭐ on GitHub.
+## Environment Variables
+
+The contact API expects Telegram configuration to be set as environment variables (see `api/contact.js`). Add these to a `.env` file locally and to your Vercel project settings for production:
+
+- `TELEGRAM_BOT_TOKEN`
+- `TELEGRAM_CHAT_ID`
+
+## Deployment
+
+The project is configured for **Vercel** (`vercel.json`). Pushing to the connected repository, or running the Vercel CLI, will build and deploy the site.
+
+## Author
+
+**Prateek Mittal** — Founder of vyxis.ai

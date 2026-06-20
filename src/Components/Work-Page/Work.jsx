@@ -1,10 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "../Home-Page/Header-Section/header";
-import styles from "./ContactPage.module.css";
-import ContactForm from "./ContactForm";
+import WorkPreview from "../Home-Page/Work-Section/WorkPrev";
+import Footer from "../Home-Page/Footer-Section/Footer";
 
-const Contact = () => {
+const Work = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
@@ -14,20 +14,16 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact - vyxis.ai</title>
-        <link
-          rel="canonical"
-          href="https://vyxis-ai.vercel.app/contact"
-        />
+        <title>Work - vyxis.ai</title>
+        <link rel="canonical" href="https://vyxis-ai.vercel.app/Work" />
       </Helmet>
-
-      <Header navLinks={navLinks} />
-
+      <Header navLinks={navLinks} isDark={true} />
       <main>
-        <ContactForm styles={styles} />
+        <WorkPreview />
       </main>
+      <Footer />
     </>
   );
 };
 
-export default Contact;
+export default Work;

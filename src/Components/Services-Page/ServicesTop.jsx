@@ -15,12 +15,14 @@ const ServicesTop = ({ blackRef, helloRef, styles }) => {
       <div className="container">
         <div className={`${styles.servicesTop} ${styles.flex} ${styles.fClmn}`}>
           <p className={styles.heading}>
-            Helping brands thrive <br className={styles.mobileBr} /> in the
-            digital world
+            AI-native solutions <br className={styles.mobileBr} /> for every
+            industry
           </p>
           <div
             className={`${styles.circle} ${styles.flex} ${styles.ac} ${styles.jc}`}
-          ></div>
+          >
+            AI-Native
+          </div>
         </div>
       </div>
     </section>

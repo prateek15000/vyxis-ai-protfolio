@@ -8,34 +8,34 @@ import gsap from "gsap";
 
 const projects = [
   {
-    title: "Stacks",
-    alt: "Stacks project website homepage preview",
-    type: "IT Agency Landing Page",
-    link: "https://stacks-design-development.vercel.app/",
+    title: "AI CRM",
+    alt: "AI-powered CRM system preview",
+    type: "95% Triage Reduction",
+    link: "https://vyxis-ai.vercel.app/",
     image: Stacks,
     date: "2026",
   },
   {
-    title: "Nexa Wave",
-    alt: "Nexa Wave digital agency website preview",
-    type: "Ai Agency Website",
-    link: "https://nexa-wave-agency.vercel.app/",
+    title: "EdTech AI",
+    alt: "Education technology AI platform preview",
+    type: "60% Admin Reduction",
+    link: "https://vyxis-ai.vercel.app/",
     image: NexaWave,
     date: "2026",
   },
   {
-    title: "Aurum Luxe",
-    alt: "Aurum Luxe luxury brand website preview",
-    type: "Jewellery Shop Landing Page",
-    link: "https://aurum-luxe-jewellery.vercel.app/",
+    title: "Hospitality",
+    alt: "Hospitality AI operations system preview",
+    type: "42% Direct Bookings",
+    link: "https://vyxis-ai.vercel.app/",
     image: Aurum,
     date: "2026",
   },
   {
-    title: "Elena Morgan",
-    alt: "Elena Morgan personal portfolio website preview",
-    type: "Photography Portfolio",
-    link: "https://elena-morgan.vercel.app/",
+    title: "AI Agents",
+    alt: "AI agent integration system preview",
+    type: "MCP, RAG, LangGraph",
+    link: "https://vyxis-ai.vercel.app/",
     image: Elena,
     date: "2026",
   },
@@ -132,7 +132,7 @@ export default function WorkPreview() {
 
           <div className={`${styles.workCta} ${styles.flex} ${styles.ac} ${styles.jc}`}>
             <button className={styles.fancyBtn}>
-              More Work <sup>11</sup>
+              More Systems <sup>08</sup>
             </button>
           </div>
 

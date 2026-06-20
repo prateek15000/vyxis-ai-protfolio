@@ -4,9 +4,9 @@ const HeroContentBottom = ({ styles, surnameRef, shortDescRef }) => {
   return (
     <div className={`${styles.lName} ${styles.flex} ${styles.fClmn}`}>
       <div className={styles.smallIntro}>
-        <p ref={shortDescRef} >Frontend <br /> Web Developer </p>
+        <p ref={shortDescRef} >Founder & CEO <br /> vyxis.ai </p>
       </div>
-      <h1 ref={surnameRef}>GHUMAAN</h1>
+      <h1 ref={surnameRef}>MITTAL</h1>
     </div>
   );
 };

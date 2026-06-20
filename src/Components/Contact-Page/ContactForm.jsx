@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
 import { MoveDownRight } from "lucide-react";
 import CEO from "../../assets/Images/Png/favicon.png";
+
 import ContactAnime from "./ContactAnime";
 
 const ContactForm = ({ styles }) => {
@@ -16,32 +16,43 @@ const ContactForm = ({ styles }) => {
         service: "",
         message: "",
     });
+    const [formStatus, setFormStatus] = useState({
+        type: "",
+        message: "",
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
         });
+        setFormStatus({ type: "", message: "" });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            await emailjs.send(
-                "service_iikgj2u",
-                "template_xfmr7y7",
-                {
-                    name: formData.name,
-                    email: formData.email,
-                    organization: formData.organization,
-                    service: formData.service,
-                    message: formData.message,
-                },
-                "jZq_zwwgExUDByktL"
-            );
+        setIsSubmitting(true);
+        setFormStatus({ type: "", message: "" });
 
-            alert("Message sent successfully!");
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error("Contact request failed");
+            }
+
+            setFormStatus({
+                type: "success",
+                message: "Your details have been received. We will contact you within one day.",
+            });
 
             setFormData({
                 name: "",
@@ -51,8 +62,13 @@ const ContactForm = ({ styles }) => {
                 message: "",
             });
         } catch (error) {
-            console.error("EmailJS Error:", error);
-            alert("Failed to send message.");
+            console.error("Contact Form Error:", error);
+            setFormStatus({
+                type: "error",
+                message: "Something went wrong. Please email us at vyxis.ai@gmail.com.",
+            });
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -66,10 +82,10 @@ const ContactForm = ({ styles }) => {
 
             <div className={styles.container}>
                 <div className={`${styles.topContent} ${styles.flex} ${styles.ac} ${styles.sb}`}>
-                    <p>Let's start a <br /> project together</p>
+                    <p>Ready to transform <br /> your business?</p>
                     <div className={`${styles.topImg} ${styles.flex} ${styles.fClmn}`}>
                         <img src={CEO} alt="" />
-                        <MoveDownRight size={32} />
+                        <MoveDownRight size={25} />
                     </div>
                 </div>
 
@@ -83,7 +99,7 @@ const ContactForm = ({ styles }) => {
                                     type="text"
                                     id="name"
                                     name="name"
-                                    placeholder="John Wick *"
+                                    placeholder="Your name *"
                                     value={formData.name}
                                     onChange={handleChange} required
                                 />
@@ -95,7 +111,7 @@ const ContactForm = ({ styles }) => {
                                     type="email"
                                     id="email"
                                     name="email"
-                                    placeholder="john@wick.com *"
+                                    placeholder="you@company.com *"
                                     value={formData.email}
                                     onChange={handleChange} required
                                 />
@@ -109,9 +125,9 @@ const ContactForm = ({ styles }) => {
                                     type="text"
                                     id="organization"
                                     name="organization"
-                                    placeholder="John & Wick ®"
+                                    placeholder="Company name"
                                     value={formData.organization}
-                                    onChange={handleChange}
+                                    onChange={handleChange} required
                                 />
                             </div>
 
@@ -123,9 +139,9 @@ const ContactForm = ({ styles }) => {
                                     type="text"
                                     id="service"
                                     name="service"
-                                    placeholder="Web Design, Web Development..."
+                                    placeholder="CRM, EdTech, Hospitality, AI Integration..."
                                     value={formData.service}
-                                    onChange={handleChange}
+                                    onChange={handleChange} required
                                 />
                             </div>
 
@@ -137,31 +153,37 @@ const ContactForm = ({ styles }) => {
                                     id="message"
                                     name="message"
                                     rows="6"
-                                    placeholder="Hello Guri, can you help me with..."
+                                    placeholder="Hello Prateek, can you help us with..."
                                     value={formData.message}
                                     onChange={handleChange} required
                                 ></textarea>
                             </div>
 
                             <div className={`${styles.contactCta} ${styles.flex} ${styles.ac}`}>
-                                <button type="submit" className={styles.submitBtn}>
-                                    Send it!
+                                <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
+                                    {isSubmitting ? "Sending..." : "Start the Conversation"}
                                 </button>
                             </div>
+
+                            {formStatus.message && (
+                                <p className={`${styles.formStatus} ${styles[formStatus.type]}`}>
+                                    {formStatus.message}
+                                </p>
+                            )}
 
                         </form>
                     </div>
                     <div className={`${styles.details} ${styles.flex} ${styles.fClmn} ${styles.ac}`}>
                         <div className={`${styles.info} ${styles.flex} ${styles.fClmn}`}>
                             <p> Contact Details </p>
-                            <a target="_blank" rel="noopener noreferrer" href="mailto:guristacks@gmail.com">guristacks@gmail.com</a>
-                            <a target="_blank" rel="noopener noreferrer" href="tel:+917696992194"> +91 7696 992194</a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://mail.google.com/mail/?view=cm&fs=1&to=vyxis.ai@gmail.com">vyxis.ai@gmail.com</a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://vyxis-ai.vercel.app/">vyxis.ai</a>
                         </div>
                         <div className={`${styles.socials} ${styles.flex} ${styles.fClmn}`}>
                             <p> Socials </p>
-                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/guristacks/">Linkedin</a>
-                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/guristacks"> Github</a>
-                            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/guri_ghumxn/"> Instagram</a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/prateek-mittal-07b94a31b/">LinkedIn</a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/prateek15000"> GitHub</a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://x.com/vyxis_ai"> Twitter/X</a>
                         </div>
                     </div>
                 </div>

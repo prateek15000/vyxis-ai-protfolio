@@ -12,11 +12,11 @@ const ServicesMiddle = ({ styles }) => {
 
           <div className={`${styles.midDesc} ${styles.flex} ${styles.fClmn}`}>
             <p>
-              I help companies from all over the world with tailor-made
-              solutions. With each project, I push my work to new horizons,
-              always putting quality first.
+              vyxis.ai builds enterprise CRM, education technology, hospitality
+              systems, and AI agent integrations with production-grade
+              engineering accountability.
             </p>
-            <p>Always exploring...</p>
+            <p>Production-grade. Not demo-grade.</p>
           </div>
 
           <div className={styles.midImg}>
